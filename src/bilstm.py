@@ -3,8 +3,6 @@ import sys
 import os.path as osp
 import torch
 import torch.nn as nn
-import keras
-from keras.utils import to_categorical
 import numpy as np
 import os
 import pickle as pkl
@@ -71,10 +69,8 @@ def torch_data(train_dict, val_dict, test_dict):
     test_tokens = np.array([[word2idx.get(w, 0) for w in doc] for doc in test_dict['word_seq']])
 
     train_tags = np.array([[tag2idx[t] for t in t_seq] for t_seq in train_dict['tag_seq']])
-    # train_tags = np.array([to_categorical(t_seq, num_classes=len(tag_dict)) for t_seq in train_tags])
 
     val_tags = np.array([[tag2idx[t] for t in t_seq] for t_seq in val_dict['tag_seq']])
-    # val_tags = np.array([to_categorical(t_seq, num_classes=len(tag_dict)) for t_seq in val_tags])
 
     train_dataset = TensorDataset(torch.from_numpy(train_tokens), torch.from_numpy(train_tags))
     val_dataset = TensorDataset(torch.from_numpy(val_tokens), torch.from_numpy(val_tags))

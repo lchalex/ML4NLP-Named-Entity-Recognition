@@ -1,5 +1,13 @@
 # MSBD6000H Covid19 NER
 
+## Dependency
+ - pytorch='1.8.0'
+ - pandas
+ - scikit-learn
+
+## Model architecture
+![alt text](doc/lstm_model.png)  
+
 ## To reproduce the results
 In src/bilstm.py, set training_mode = False in config class  
 
