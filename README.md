@@ -2,6 +2,7 @@
 
 ## Dependency
  - pytorch='1.8.0'
+ - numpy
  - pandas
  - scikit-learn
 
