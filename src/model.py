@@ -108,7 +108,7 @@ def eval_model(model, dataloaders, checkpoint):
 	data_shape = next(iter(dataloaders['valid']))[0].shape
 	batch_size = data_shape[0]
 	criterion = torch.nn.CrossEntropyLoss().to(device)
-	model.load_state_dict(torch.load(checkpoint))
+	model.load_state_dict(torch.load(osp.join(WEIGHTS_ROOT, checkpoint)))
 	model.to(device)
 	model.eval()
 	total_corrects = 0
