@@ -90,7 +90,7 @@ def get_csv_accuracy(d1, d2):
     assert len(d1["id"]) == len(d2["id"])
     return sum(np.array(d1["tag"]) == np.array(d2["tag"])) / len(d1["tag"])
 
-kf = KFold(n_splits=config.kfold, random_state=2021)
+kf = KFold(n_splits=config.kfold)
 if config.training_mode:
     for i, (train_idx, val_idx) in enumerate(kf.split(range(len(trainval_dict['id'])))):
         train_d, val_d = slice_data(trainval_dict, train_idx, val_idx)

@@ -4,7 +4,7 @@
  - pytorch='1.8.0'
  - numpy
  - pandas
- - scikit-learn
+ - scikit-learn='0.22.2'
 
 ## Model architecture
 ![alt text](doc/lstm_model.png)  
